@@ -27,8 +27,8 @@
     },
     {
       "atomType": "Molecule",
-      "x": 0.2552910052910053,
-      "y": 0.6713091922005571,
+      "x": 0.39814814814814814,
+      "y": 0.6824512534818942,
       "uniqueID": "id-4",
       "name": "Side",
       "ioValues": [
@@ -272,6 +272,11 @@
     }
   ],
   "allConnectors": [
+    {
+      "ap2Name": "number or geometry",
+      "ap1ID": "id-4",
+      "ap2ID": "id-2"
+    },
     {
       "ap2Name": "Wood_Thickness",
       "ap1ID": "id-12",
