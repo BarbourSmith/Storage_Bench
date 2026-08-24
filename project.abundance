@@ -2136,8 +2136,8 @@
     },
     {
       "atomType": "Molecule",
-      "x": 0.33730158730158727,
-      "y": 0.12534818941504178,
+      "x": 0.3412698412698413,
+      "y": 0.0807799442896936,
       "uniqueID": "id-197",
       "name": "Sides",
       "ioValues": [
@@ -2649,7 +2649,11 @@
                   "uniqueID": "id-1033",
                   "name": "shape",
                   "type": "edgeselect",
-                  "selectedEdgeData": {}
+                  "selectedEdgeData": {
+                    "0": [
+                      7
+                    ]
+                  }
                 },
                 {
                   "atomType": "Input",
@@ -2708,121 +2712,8 @@
             },
             {
               "atomType": "GitHubMolecule",
-              "x": 0.7632275132275133,
-              "y": 0.5988857938718662,
-              "uniqueID": "id-1057",
-              "name": "selected.Fillet",
-              "ioValues": [
-                {
-                  "name": "shape",
-                  "ioValue": "__GEOMETRY_INPUT__"
-                },
-                {
-                  "name": "radius",
-                  "ioValue": 200
-                }
-              ],
-              "topLevel": false,
-              "allAtoms": [
-                {
-                  "atomType": "Output",
-                  "x": 0.98,
-                  "y": 0.5,
-                  "uniqueID": "id-1058",
-                  "ioValues": [
-                    {
-                      "name": "number or geometry",
-                      "ioValue": "__GEOMETRY_INPUT__"
-                    }
-                  ]
-                },
-                {
-                  "atomType": "Code",
-                  "x": 0.404296875,
-                  "y": 0.6542857142857142,
-                  "uniqueID": "id-1059",
-                  "ioValues": [
-                    {
-                      "name": "toFillet",
-                      "ioValue": "__GEOMETRY_INPUT__"
-                    },
-                    {
-                      "name": "radius",
-                      "ioValue": 200
-                    }
-                  ],
-                  "interpreterVersion": 1,
-                  "code": "function run(toFillet: Assembly, radius: number) {\n  return toFillet.onLeafs((leaf) => {\n    if (leaf.geometry instanceof replicad.Drawing || !replicad.isShape3D(leaf.geometry)) {\n      return leaf;\n    }\n    if (leaf.selection?.part) {\n      leaf.geometry = leaf.geometry.fillet(radius)\n      return leaf;\n    }\n    // else apply only to filtered faces and edges\n    let edgesToFillet: replicad.Edge[] = []\n    if (leaf.selection?.faces) {\n      leaf.selection.faces.forEach((faceIndex) => {\n        edgesToFillet.push(...leaf.geometry.faces[faceIndex].edges)\n      });\n    }\n    console.log(edgesToFillet)\n    console.log(\"intermediate\")\n    console.log(leaf.selection)\n    if (leaf.selection?.edges) {\n      edgesToFillet.push(...leaf.selection.edges.map((index) => leaf.geometry.edges[index]))\n    }\n    if (edgesToFillet.length == 0) {\n      return leaf;\n    }\n    edgesToFillet = edgesToFillet.filter((e) => e != null)\n    if (edgesToFillet.length == 0) {\n      return leaf.geometry\n    }\n    console.log(edgesToFillet)\n    leaf.geometry = leaf.geometry.fillet(radius, (e) => { return e.inList(edgesToFillet.map((e) => e.clone())) })\n    return leaf;\n  })\n}",
-                  "compiledCode": "\"use strict\";\nfunction run(toFillet, radius) {\n    return toFillet.onLeafs((leaf) => {\n        if (leaf.geometry instanceof replicad.Drawing || !replicad.isShape3D(leaf.geometry)) {\n            return leaf;\n        }\n        if (leaf.selection?.part) {\n            leaf.geometry = leaf.geometry.fillet(radius);\n            return leaf;\n        }\n        // else apply only to filtered faces and edges\n        let edgesToFillet = [];\n        if (leaf.selection?.faces) {\n            leaf.selection.faces.forEach((faceIndex) => {\n                edgesToFillet.push(...leaf.geometry.faces[faceIndex].edges);\n            });\n        }\n        console.log(edgesToFillet);\n        console.log(\"intermediate\");\n        console.log(leaf.selection);\n        if (leaf.selection?.edges) {\n            edgesToFillet.push(...leaf.selection.edges.map((index) => leaf.geometry.edges[index]));\n        }\n        if (edgesToFillet.length == 0) {\n            return leaf;\n        }\n        edgesToFillet = edgesToFillet.filter((e) => e != null);\n        if (edgesToFillet.length == 0) {\n            return leaf.geometry;\n        }\n        console.log(edgesToFillet);\n        leaf.geometry = leaf.geometry.fillet(radius, (e) => { return e.inList(edgesToFillet.map((e) => e.clone())); });\n        return leaf;\n    });\n}\n"
-                },
-                {
-                  "atomType": "Input",
-                  "x": 0.025384615384615384,
-                  "y": 0.15384615384615385,
-                  "uniqueID": "id-1060",
-                  "name": "shape",
-                  "type": "edgeselect",
-                  "selectedEdgeData": {}
-                },
-                {
-                  "atomType": "Input",
-                  "x": 0.025384615384615384,
-                  "y": 0.24615384615384617,
-                  "uniqueID": "id-1061",
-                  "name": "radius"
-                }
-              ],
-              "allConnectors": [
-                {
-                  "ap2Name": "number or geometry",
-                  "ap1ID": "id-1059",
-                  "ap2ID": "id-1058"
-                },
-                {
-                  "ap2Name": "toFillet",
-                  "ap1ID": "id-1060",
-                  "ap2ID": "id-1059"
-                },
-                {
-                  "ap2Name": "radius",
-                  "ap1ID": "id-1061",
-                  "ap2ID": "id-1059"
-                }
-              ],
-              "parentRepo": {
-                "lastFoundGit": "2026-08-24T18:23:39.123Z",
-                "privateRepo": false,
-                "repoName": "selected.Fillet",
-                "dateCreated": "2026-07-21T21:29:20Z",
-                "likes": 0,
-                "readMe": "https://raw.githubusercontent.com/tristan-huber/selected.Fillet/master/README.md?sanitize=true",
-                "yyyy": 2026,
-                "topMoleculeID": "id-22879",
-                "githubMoleculesUsed": [],
-                "html_url": "https://github.com/tristan-huber/selected.Fillet",
-                "topics": [
-                  "abundance-tool"
-                ],
-                "pullRequests": [],
-                "parentRepo": null,
-                "forks": 0,
-                "dateModified": "739818",
-                "ranking": 6.9,
-                "searchField": "selected.fillet tristan-huber fillet the only the selected edges of an assembly. you can also input face or sub-assembly selections, edges will be filleted if they meet any of the selection criteria, eg on a selected subassembly, on a selected face. default fillets all edges. abundance-tool",
-                "owner": "tristan-huber",
-                "description": "Fillet the only the selected edges of an assembly. You can also input face or sub-assembly selections, edges will be filleted if they meet any of the selection criteria, eg on a selected subassembly, on a selected face. Default fillets all edges.",
-                "contentURL": "https://raw.githubusercontent.com/tristan-huber/selected.Fillet/master/project.abundance?sanitize=true",
-                "svgURL": "https://raw.githubusercontent.com/tristan-huber/selected.Fillet/master/project.svg?sanitize=true",
-                "isLocal": false
-              },
-              "unitsKey": "Unitless",
-              "fileTypeVersion": 1,
-              "lastReloadedFromGithubAt": 1787611152482
-            },
-            {
-              "atomType": "GitHubMolecule",
-              "x": 0.8472222222222222,
-              "y": 0.6935933147632313,
+              "x": 0.843915343915344,
+              "y": 0.67966573816156,
               "uniqueID": "id-1073",
               "name": "selected.Fillet",
               "ioValues": [
@@ -2875,7 +2766,14 @@
                   "uniqueID": "id-1076",
                   "name": "shape",
                   "type": "edgeselect",
-                  "selectedEdgeData": {}
+                  "selectedEdgeData": {
+                    "0": [
+                      29,
+                      25,
+                      13,
+                      17
+                    ]
+                  }
                 },
                 {
                   "atomType": "Input",
@@ -2931,6 +2829,124 @@
               "unitsKey": "Unitless",
               "fileTypeVersion": 1,
               "lastReloadedFromGithubAt": 1787611152482
+            },
+            {
+              "atomType": "GitHubMolecule",
+              "x": 0.7632275132275133,
+              "y": 0.5988857938718662,
+              "uniqueID": "id-2005",
+              "name": "selected.Fillet",
+              "ioValues": [
+                {
+                  "name": "shape",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "radius",
+                  "ioValue": 200
+                }
+              ],
+              "topLevel": false,
+              "allAtoms": [
+                {
+                  "atomType": "Output",
+                  "x": 0.98,
+                  "y": 0.5,
+                  "uniqueID": "id-2001",
+                  "ioValues": [
+                    {
+                      "name": "number or geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Code",
+                  "x": 0.404296875,
+                  "y": 0.6542857142857142,
+                  "uniqueID": "id-2002",
+                  "ioValues": [
+                    {
+                      "name": "toFillet",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "radius",
+                      "ioValue": 200
+                    }
+                  ],
+                  "interpreterVersion": 1,
+                  "code": "function run(toFillet: Assembly, radius: number) {\n  return toFillet.onLeafs((leaf) => {\n    if (leaf.geometry instanceof replicad.Drawing || !replicad.isShape3D(leaf.geometry)) {\n      return leaf;\n    }\n    if (leaf.selection?.part) {\n      leaf.geometry = leaf.geometry.fillet(radius)\n      return leaf;\n    }\n    // else apply only to filtered faces and edges\n    let edgesToFillet: replicad.Edge[] = []\n    if (leaf.selection?.faces) {\n      leaf.selection.faces.forEach((faceIndex) => {\n        edgesToFillet.push(...leaf.geometry.faces[faceIndex].edges)\n      });\n    }\n    console.log(edgesToFillet)\n    console.log(\"intermediate\")\n    console.log(leaf.selection)\n    if (leaf.selection?.edges) {\n      edgesToFillet.push(...leaf.selection.edges.map((index) => leaf.geometry.edges[index]))\n    }\n    if (edgesToFillet.length == 0) {\n      return leaf;\n    }\n    edgesToFillet = edgesToFillet.filter((e) => e != null)\n    if (edgesToFillet.length == 0) {\n      return leaf.geometry\n    }\n    console.log(edgesToFillet)\n    leaf.geometry = leaf.geometry.fillet(radius, (e) => { return e.inList(edgesToFillet.map((e) => e.clone())) })\n    return leaf;\n  })\n}",
+                  "compiledCode": "\"use strict\";\nfunction run(toFillet, radius) {\n    return toFillet.onLeafs((leaf) => {\n        if (leaf.geometry instanceof replicad.Drawing || !replicad.isShape3D(leaf.geometry)) {\n            return leaf;\n        }\n        if (leaf.selection?.part) {\n            leaf.geometry = leaf.geometry.fillet(radius);\n            return leaf;\n        }\n        // else apply only to filtered faces and edges\n        let edgesToFillet = [];\n        if (leaf.selection?.faces) {\n            leaf.selection.faces.forEach((faceIndex) => {\n                edgesToFillet.push(...leaf.geometry.faces[faceIndex].edges);\n            });\n        }\n        console.log(edgesToFillet);\n        console.log(\"intermediate\");\n        console.log(leaf.selection);\n        if (leaf.selection?.edges) {\n            edgesToFillet.push(...leaf.selection.edges.map((index) => leaf.geometry.edges[index]));\n        }\n        if (edgesToFillet.length == 0) {\n            return leaf;\n        }\n        edgesToFillet = edgesToFillet.filter((e) => e != null);\n        if (edgesToFillet.length == 0) {\n            return leaf.geometry;\n        }\n        console.log(edgesToFillet);\n        leaf.geometry = leaf.geometry.fillet(radius, (e) => { return e.inList(edgesToFillet.map((e) => e.clone())); });\n        return leaf;\n    });\n}\n"
+                },
+                {
+                  "atomType": "Input",
+                  "x": 0.025384615384615384,
+                  "y": 0.15384615384615385,
+                  "uniqueID": "id-2003",
+                  "name": "shape",
+                  "type": "edgeselect",
+                  "selectedEdgeData": {
+                    "0": [
+                      29,
+                      25
+                    ]
+                  }
+                },
+                {
+                  "atomType": "Input",
+                  "x": 0.025384615384615384,
+                  "y": 0.24615384615384617,
+                  "uniqueID": "id-2004",
+                  "name": "radius"
+                }
+              ],
+              "allConnectors": [
+                {
+                  "ap2Name": "number or geometry",
+                  "ap1ID": "id-2002",
+                  "ap2ID": "id-2001"
+                },
+                {
+                  "ap2Name": "toFillet",
+                  "ap1ID": "id-2003",
+                  "ap2ID": "id-2002"
+                },
+                {
+                  "ap2Name": "radius",
+                  "ap1ID": "id-2004",
+                  "ap2ID": "id-2002"
+                }
+              ],
+              "parentRepo": {
+                "lastFoundGit": "2026-08-24T18:23:39.123Z",
+                "privateRepo": false,
+                "repoName": "selected.Fillet",
+                "dateCreated": "2026-07-21T21:29:20Z",
+                "likes": 0,
+                "readMe": "https://raw.githubusercontent.com/tristan-huber/selected.Fillet/master/README.md?sanitize=true",
+                "yyyy": 2026,
+                "topMoleculeID": "id-22879",
+                "githubMoleculesUsed": [],
+                "html_url": "https://github.com/tristan-huber/selected.Fillet",
+                "topics": [
+                  "abundance-tool"
+                ],
+                "pullRequests": [],
+                "parentRepo": null,
+                "forks": 0,
+                "dateModified": "739818",
+                "ranking": 6.9,
+                "searchField": "selected.fillet tristan-huber fillet the only the selected edges of an assembly. you can also input face or sub-assembly selections, edges will be filleted if they meet any of the selection criteria, eg on a selected subassembly, on a selected face. default fillets all edges. abundance-tool",
+                "owner": "tristan-huber",
+                "description": "Fillet the only the selected edges of an assembly. You can also input face or sub-assembly selections, edges will be filleted if they meet any of the selection criteria, eg on a selected subassembly, on a selected face. Default fillets all edges.",
+                "contentURL": "https://raw.githubusercontent.com/tristan-huber/selected.Fillet/master/project.abundance?sanitize=true",
+                "svgURL": "https://raw.githubusercontent.com/tristan-huber/selected.Fillet/master/project.svg?sanitize=true",
+                "isLocal": false
+              },
+              "unitsKey": "Unitless",
+              "fileTypeVersion": 1,
+              "lastReloadedFromGithubAt": 1787614373399
             }
           ],
           "allConnectors": [
@@ -2982,17 +2998,17 @@
             {
               "ap2Name": "shape",
               "ap1ID": "id-1035",
-              "ap2ID": "id-1057"
-            },
-            {
-              "ap2Name": "shape",
-              "ap1ID": "id-1057",
-              "ap2ID": "id-1073"
+              "ap2ID": "id-2005"
             },
             {
               "ap2Name": "number or geometry",
               "ap1ID": "id-1073",
               "ap2ID": "id-203"
+            },
+            {
+              "ap2Name": "shape",
+              "ap1ID": "id-2005",
+              "ap2ID": "id-1073"
             }
           ],
           "fileTypeVersion": 1
