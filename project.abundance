@@ -1605,13 +1605,13 @@
         },
         {
           "atomType": "Rectangle",
-          "x": 0.21825396825396826,
-          "y": 0.2813370473537604,
+          "x": 0.2751322751322751,
+          "y": 0.26740947075208915,
           "uniqueID": "id-516",
           "ioValues": [
             {
               "name": "x length",
-              "ioValue": 2133.6
+              "ioValue": 2115.6
             },
             {
               "name": "y length",
@@ -1684,8 +1684,8 @@
         },
         {
           "atomType": "GitHubMolecule",
-          "x": 0.5641534391534392,
-          "y": 0.5431754874651811,
+          "x": 0.498015873015873,
+          "y": 0.6016713091922006,
           "uniqueID": "id-552",
           "name": "Above_XY",
           "ioValues": [
@@ -1780,32 +1780,8 @@
         },
         {
           "atomType": "Move",
-          "x": 0.578042328042328,
-          "y": 0.14763231197771587,
-          "uniqueID": "id-989",
-          "ioValues": [
-            {
-              "name": "geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "xDist",
-              "ioValue": 0
-            },
-            {
-              "name": "yDist",
-              "ioValue": 0
-            },
-            {
-              "name": "zDist",
-              "ioValue": 18
-            }
-          ]
-        },
-        {
-          "atomType": "Move",
-          "x": 0.7156084656084657,
-          "y": 0.7465181058495821,
+          "x": 0.6818783068783069,
+          "y": 0.33704735376044564,
           "uniqueID": "id-995",
           "ioValues": [
             {
@@ -1826,13 +1802,86 @@
               "ioValue": 0
             }
           ]
+        },
+        {
+          "atomType": "Equation",
+          "x": 0.16997354497354497,
+          "y": 0.2562674094707521,
+          "uniqueID": "id-1002",
+          "name": "L-T",
+          "ioValues": [
+            {
+              "name": "L",
+              "ioValue": 2133.6
+            },
+            {
+              "name": "T",
+              "ioValue": 18
+            }
+          ],
+          "currentEquation": "L-T"
+        },
+        {
+          "atomType": "Move",
+          "x": 0.6785714285714286,
+          "y": 0.7047353760445683,
+          "uniqueID": "id-1008",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "xDist",
+              "ioValue": 0
+            },
+            {
+              "name": "yDist",
+              "ioValue": -223.29999999999998,
+              "currentEquation": "((19*25.4)/-2)"
+            },
+            {
+              "name": "zDist",
+              "ioValue": 0
+            }
+          ]
+        },
+        {
+          "atomType": "Assembly",
+          "x": 0.8220899470899472,
+          "y": 0.5905292479108635,
+          "uniqueID": "id-1014",
+          "ioValues": [
+            {
+              "name": "Shape 1",
+              "ioValue": null
+            },
+            {
+              "name": "Shape 2",
+              "ioValue": null
+            }
+          ]
+        },
+        {
+          "atomType": "Equation",
+          "x": 0.27711640211640215,
+          "y": 0.9192200557103064,
+          "uniqueID": "id-1019",
+          "name": "((19*25.4)/-2)+T",
+          "ioValues": [
+            {
+              "name": "T",
+              "ioValue": 18
+            }
+          ],
+          "currentEquation": "((19*25.4)/-2)+T"
         }
       ],
       "allConnectors": [
         {
-          "ap2Name": "x length",
+          "ap2Name": "L",
           "ap1ID": "id-513",
-          "ap2ID": "id-516"
+          "ap2ID": "id-1002"
         },
         {
           "ap2Name": "geometry",
@@ -1855,9 +1904,14 @@
           "ap2ID": "id-528"
         },
         {
-          "ap2Name": "zDist",
+          "ap2Name": "T",
           "ap1ID": "id-525",
-          "ap2ID": "id-989"
+          "ap2ID": "id-1002"
+        },
+        {
+          "ap2Name": "T",
+          "ap1ID": "id-525",
+          "ap2ID": "id-1019"
         },
         {
           "ap2Name": "geometry",
@@ -1872,17 +1926,37 @@
         {
           "ap2Name": "geometry",
           "ap1ID": "id-552",
-          "ap2ID": "id-989"
-        },
-        {
-          "ap2Name": "geometry",
-          "ap1ID": "id-989",
           "ap2ID": "id-995"
         },
         {
-          "ap2Name": "number or geometry",
+          "ap2Name": "geometry",
+          "ap1ID": "id-552",
+          "ap2ID": "id-1008"
+        },
+        {
+          "ap2Name": "Shape 2",
           "ap1ID": "id-995",
+          "ap2ID": "id-1014"
+        },
+        {
+          "ap2Name": "x length",
+          "ap1ID": "id-1002",
+          "ap2ID": "id-516"
+        },
+        {
+          "ap2Name": "Shape 1",
+          "ap1ID": "id-1008",
+          "ap2ID": "id-1014"
+        },
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-1014",
           "ap2ID": "id-494"
+        },
+        {
+          "ap2Name": "yDist",
+          "ap1ID": "id-1019",
+          "ap2ID": "id-1008"
         }
       ],
       "fileTypeVersion": 1
@@ -2062,8 +2136,8 @@
     },
     {
       "atomType": "GitHubMolecule",
-      "x": 0.6845238095238095,
-      "y": 0.7548746518105849,
+      "x": 0.6878306878306879,
+      "y": 0.7715877437325905,
       "uniqueID": "id-943",
       "name": "Deck_Crate",
       "topLevel": false,
