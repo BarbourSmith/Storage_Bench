@@ -12,5 +12,7 @@
 
 
 
- 
+ Todo: Give lid some angle, measure and model batteries, add cutouts for control modules
+
+
 
