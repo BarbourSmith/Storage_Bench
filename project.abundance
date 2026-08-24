@@ -45,8 +45,8 @@
     },
     {
       "atomType": "Molecule",
-      "x": 0.24404761904761904,
-      "y": 0.3593314763231198,
+      "x": 0.35714285714285715,
+      "y": 0.29526462395543174,
       "uniqueID": "id-197",
       "name": "Sides",
       "ioValues": [
@@ -191,8 +191,8 @@
         },
         {
           "atomType": "Molecule",
-          "x": 0.36018518518518516,
-          "y": 0.21740947075208916,
+          "x": 0.3584656084656085,
+          "y": 0.18105849582172703,
           "uniqueID": "id-202",
           "name": "Side",
           "ioValues": [
@@ -761,6 +761,296 @@
         }
       ],
       "fileTypeVersion": 1
+    },
+    {
+      "atomType": "Assembly",
+      "x": 0.6984126984126984,
+      "y": 0.2813370473537604,
+      "uniqueID": "id-323",
+      "ioValues": [
+        {
+          "name": "Shape 1",
+          "ioValue": null
+        }
+      ]
+    },
+    {
+      "atomType": "Molecule",
+      "x": 0.31283068783068785,
+      "y": 0.6128133704735376,
+      "uniqueID": "id-327",
+      "name": "Lid",
+      "ioValues": [
+        {
+          "name": "Wood_Thickness",
+          "ioValue": 18
+        },
+        {
+          "name": "Bench_Length",
+          "ioValue": 2133.6
+        }
+      ],
+      "topLevel": false,
+      "allAtoms": [
+        {
+          "atomType": "Output",
+          "x": 0.98,
+          "y": 0.5,
+          "uniqueID": "id-329",
+          "ioValues": [
+            {
+              "name": "number or geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.2395543175487465,
+          "uniqueID": "id-331",
+          "name": "Wood_Thickness",
+          "type": "number"
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.5153203342618384,
+          "uniqueID": "id-334",
+          "name": "Bench_Length",
+          "type": "number"
+        },
+        {
+          "atomType": "Rectangle",
+          "x": 0.24537037037037038,
+          "y": 0.5264623955431754,
+          "uniqueID": "id-337",
+          "ioValues": [
+            {
+              "name": "x length",
+              "ioValue": 2115.6
+            },
+            {
+              "name": "y length",
+              "ioValue": 482.59999999999997,
+              "currentEquation": "19*25.4"
+            }
+          ]
+        },
+        {
+          "atomType": "Extrude",
+          "x": 0.5085978835978836,
+          "y": 0.3537604456824513,
+          "uniqueID": "id-347",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "height",
+              "ioValue": 18
+            }
+          ]
+        },
+        {
+          "atomType": "Equation",
+          "x": 0.15211640211640212,
+          "y": 0.5264623955431754,
+          "uniqueID": "id-357",
+          "name": "L-T",
+          "ioValues": [
+            {
+              "name": "L",
+              "ioValue": 2133.6
+            },
+            {
+              "name": "T",
+              "ioValue": 18
+            }
+          ],
+          "currentEquation": "L-T"
+        },
+        {
+          "atomType": "Rectangle",
+          "x": 0.328042328042328,
+          "y": 0.7298050139275767,
+          "uniqueID": "id-363",
+          "ioValues": [
+            {
+              "name": "x length",
+              "ioValue": 2187.6
+            },
+            {
+              "name": "y length",
+              "ioValue": 30,
+              "currentEquation": "30"
+            }
+          ]
+        },
+        {
+          "atomType": "Equation",
+          "x": 0.1349206349206349,
+          "y": 0.8245125348189415,
+          "uniqueID": "id-367",
+          "name": "L+3*T",
+          "ioValues": [
+            {
+              "name": "L",
+              "ioValue": 2133.6
+            },
+            {
+              "name": "T",
+              "ioValue": 18
+            }
+          ],
+          "currentEquation": "L+3*T"
+        },
+        {
+          "atomType": "Move",
+          "x": 0.41335978835978837,
+          "y": 0.7938718662952646,
+          "uniqueID": "id-371",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "xDist",
+              "ioValue": 0
+            },
+            {
+              "name": "yDist",
+              "ioValue": 200,
+              "currentEquation": "200"
+            },
+            {
+              "name": "zDist",
+              "ioValue": 0
+            }
+          ]
+        },
+        {
+          "atomType": "Fusion",
+          "x": 0.48412698412698413,
+          "y": 0.6740947075208913,
+          "uniqueID": "id-377",
+          "ioValues": [
+            {
+              "name": "Shape 1",
+              "ioValue": {
+                "geometry": "move-rectangle-2187.6-30-0-200-0",
+                "dimension": "2D",
+                "plane": {
+                  "origin": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "xDir": [
+                    1,
+                    0,
+                    0
+                  ],
+                  "normal": [
+                    0,
+                    0,
+                    1
+                  ]
+                },
+                "color": "#aad7f2",
+                "tags": [],
+                "bom": []
+              }
+            }
+          ],
+          "unionType": "Fusion"
+        }
+      ],
+      "allConnectors": [
+        {
+          "ap2Name": "height",
+          "ap1ID": "id-331",
+          "ap2ID": "id-347"
+        },
+        {
+          "ap2Name": "T",
+          "ap1ID": "id-331",
+          "ap2ID": "id-357"
+        },
+        {
+          "ap2Name": "T",
+          "ap1ID": "id-331",
+          "ap2ID": "id-367"
+        },
+        {
+          "ap2Name": "L",
+          "ap1ID": "id-334",
+          "ap2ID": "id-357"
+        },
+        {
+          "ap2Name": "L",
+          "ap1ID": "id-334",
+          "ap2ID": "id-367"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-337",
+          "ap2ID": "id-347"
+        },
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-347",
+          "ap2ID": "id-329"
+        },
+        {
+          "ap2Name": "x length",
+          "ap1ID": "id-357",
+          "ap2ID": "id-337"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-363",
+          "ap2ID": "id-371"
+        },
+        {
+          "ap2Name": "x length",
+          "ap1ID": "id-367",
+          "ap2ID": "id-363"
+        },
+        {
+          "ap2Name": "Shape 1",
+          "ap1ID": "id-371",
+          "ap2ID": "id-377"
+        }
+      ],
+      "fileTypeVersion": 1
+    },
+    {
+      "atomType": "Move",
+      "x": 0.38888888888888884,
+      "y": 0.7047353760445683,
+      "uniqueID": "id-351",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "xDist",
+          "ioValue": 0
+        },
+        {
+          "name": "yDist",
+          "ioValue": 0
+        },
+        {
+          "name": "zDist",
+          "ioValue": 400,
+          "currentEquation": "400"
+        }
+      ]
     }
   ],
   "allConnectors": [
@@ -770,9 +1060,34 @@
       "ap2ID": "id-197"
     },
     {
+      "ap2Name": "Wood_Thickness",
+      "ap1ID": "id-12",
+      "ap2ID": "id-327"
+    },
+    {
       "ap2Name": "Bench_Length",
       "ap1ID": "id-167",
       "ap2ID": "id-197"
+    },
+    {
+      "ap2Name": "Bench_Length",
+      "ap1ID": "id-167",
+      "ap2ID": "id-327"
+    },
+    {
+      "ap2Name": "Shape 1",
+      "ap1ID": "id-197",
+      "ap2ID": "id-323"
+    },
+    {
+      "ap2Name": "number or geometry",
+      "ap1ID": "id-323",
+      "ap2ID": "id-2"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-327",
+      "ap2ID": "id-351"
     }
   ],
   "unitsKey": "MM",
