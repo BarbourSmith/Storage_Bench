@@ -2964,8 +2964,8 @@
     },
     {
       "atomType": "Readme",
-      "x": 0.8227513227513227,
-      "y": 0.6545961002785515,
+      "x": 0.8339947089947091,
+      "y": 0.5292479108635098,
       "uniqueID": "id-1024",
       "name": "README",
       "ioValues": [
@@ -2974,7 +2974,7 @@
           "ioValue": "__GEOMETRY_INPUT__"
         }
       ],
-      "readMeText": "Todo: Give lid some angle, measure and model batteries, add cutouts for control modules",
+      "readMeText": "Todo: Give lid some angle, measure and model batteries, add cutouts for control modules. Add a 4 degree slope to the lid",
       "global": true
     },
     {
@@ -2992,8 +2992,8 @@
     },
     {
       "atomType": "CutOrient",
-      "x": 0.7632275132275133,
-      "y": 0.8523676880222841,
+      "x": 0.796957671957672,
+      "y": 0.8245125348189415,
       "uniqueID": "id-1092",
       "name": "Cut Orient",
       "ioValues": [
@@ -3002,8 +3002,44 @@
           "ioValue": "__GEOMETRY_INPUT__"
         }
       ],
-      "orientations": [],
-      "orientationsForHashed": null
+      "orientations": [
+        {
+          "downwardFaceIndex": 0
+        },
+        {
+          "downwardFaceIndex": 15
+        },
+        {
+          "downwardFaceIndex": 10
+        },
+        {
+          "downwardFaceIndex": 4
+        },
+        {
+          "downwardFaceIndex": 4
+        },
+        {
+          "downwardFaceIndex": 4
+        }
+      ],
+      "orientationsForHashed": 6
+    },
+    {
+      "atomType": "ExtractTag",
+      "x": 0.7083333333333333,
+      "y": 0.8272980501392758,
+      "uniqueID": "id-1095",
+      "name": "Extract Not Keep Out",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        }
+      ],
+      "tagIndex": 0,
+      "selectedTags": [],
+      "includeUntagged": false,
+      "notKeepOut": true
     }
   ],
   "allConnectors": [
@@ -3060,7 +3096,7 @@
     {
       "ap2Name": "geometry",
       "ap1ID": "id-323",
-      "ap2ID": "id-1092"
+      "ap2ID": "id-1095"
     },
     {
       "ap2Name": "Shape 2",
@@ -3096,6 +3132,11 @@
       "ap2Name": "number or geometry",
       "ap1ID": "id-1089",
       "ap2ID": "id-2"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-1095",
+      "ap2ID": "id-1092"
     }
   ],
   "unitsKey": "MM",
