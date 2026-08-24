@@ -673,8 +673,8 @@
     },
     {
       "atomType": "Molecule",
-      "x": 0.30158730158730157,
-      "y": 0.5236768802228412,
+      "x": 0.30687830687830686,
+      "y": 0.5153203342618384,
       "uniqueID": "id-327",
       "name": "Lid",
       "ioValues": [
@@ -1592,6 +1592,127 @@
               "ioValue": 18
             }
           ]
+        },
+        {
+          "atomType": "Rotate",
+          "x": 0.5496031746031745,
+          "y": 0.7158774373259054,
+          "uniqueID": "id-532",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "x-axis degrees",
+              "ioValue": 90,
+              "currentEquation": "90"
+            },
+            {
+              "name": "y-axis degrees",
+              "ioValue": 0
+            },
+            {
+              "name": "z-axis degrees",
+              "ioValue": 0
+            }
+          ]
+        },
+        {
+          "atomType": "GitHubMolecule",
+          "x": 0.6726190476190476,
+          "y": 0.7548746518105849,
+          "uniqueID": "id-552",
+          "name": "Above_XY",
+          "ioValues": [
+            {
+              "name": "Input",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ],
+          "topLevel": false,
+          "allAtoms": [
+            {
+              "atomType": "Output",
+              "x": 0.98,
+              "y": 0.5,
+              "uniqueID": "id-549",
+              "ioValues": [
+                {
+                  "name": "number or geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ]
+            },
+            {
+              "atomType": "Input",
+              "x": 0.025384615384615384,
+              "y": 0.15384615384615385,
+              "uniqueID": "id-550",
+              "type": "geometry"
+            },
+            {
+              "atomType": "Code",
+              "x": 0.4854497354497354,
+              "y": 0.36211699164345407,
+              "uniqueID": "id-551",
+              "ioValues": [
+                {
+                  "name": "shape",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "clearance",
+                  "ioValue": 0
+                },
+                {
+                  "name": "onlyMoveUp",
+                  "ioValue": true
+                }
+              ],
+              "interpreterVersion": 1,
+              "code": "/**\n * Lift Above XY Plane\n *\n * Shifts the incoming geometry straight up in Z so its lowest point sits at\n * `clearance` above the XY plane (Z = 0).\n */\nfunction run(\n  shape: Assembly | undefined = undefined,\n  clearance: number = 0,\n  onlyMoveUp: boolean = true,\n): Assembly {\n  if (!shape) {\n    throw new Error(\"Connect geometry to the 'shape' input\");\n  }\n\n  // Find the lowest Z across every leaf of the assembly.\n  let minZ = Infinity;\n  shape.onLeafs((leaf) => {\n    const bounds = (leaf.geometry as any).boundingBox?.bounds;\n    // 3D bounds are [[x,y,z],[x,y,z]]; a 2D Drawing only has [[x,y],[x,y]]\n    if (bounds && bounds[0].length > 2) {\n      minZ = Math.min(minZ, bounds[0][2]);\n    }\n    return leaf;\n  });\n\n  if (!isFinite(minZ)) {\n    console.warn(\"No 3D geometry found - passing the input through unchanged\");\n    return shape;\n  }\n\n  // How far up to go to put the bottom of the part at `clearance`.\n  let dz = clearance - minZ;\n  if (onlyMoveUp && dz < 0) {\n    dz = 0; // already above the plane, leave it where it is\n  }\n  if (dz === 0) {\n    return shape;\n  }\n\n  console.log(`Lowest point at Z=${minZ}, lifting by ${dz}`);\n\n  const lifted = shape.onLeafs((leaf) => {\n    const moved = new Assembly(leaf); // keeps color, tags, bom, plane\n    moved.geometry = (leaf.geometry as any).translate(0, 0, dz);\n    return moved;\n  });\n\n  if (!lifted) {\n    throw new Error(\"Input assembly contained no geometry\");\n  }\n  return lifted;\n}",
+              "compiledCode": "\"use strict\";\n/**\n * Lift Above XY Plane\n *\n * Shifts the incoming geometry straight up in Z so its lowest point sits at\n * `clearance` above the XY plane (Z = 0).\n */\nfunction run(shape = undefined, clearance = 0, onlyMoveUp = true) {\n    if (!shape) {\n        throw new Error(\"Connect geometry to the 'shape' input\");\n    }\n    // Find the lowest Z across every leaf of the assembly.\n    let minZ = Infinity;\n    shape.onLeafs((leaf) => {\n        const bounds = leaf.geometry.boundingBox?.bounds;\n        // 3D bounds are [[x,y,z],[x,y,z]]; a 2D Drawing only has [[x,y],[x,y]]\n        if (bounds && bounds[0].length > 2) {\n            minZ = Math.min(minZ, bounds[0][2]);\n        }\n        return leaf;\n    });\n    if (!isFinite(minZ)) {\n        console.warn(\"No 3D geometry found - passing the input through unchanged\");\n        return shape;\n    }\n    // How far up to go to put the bottom of the part at `clearance`.\n    let dz = clearance - minZ;\n    if (onlyMoveUp && dz < 0) {\n        dz = 0; // already above the plane, leave it where it is\n    }\n    if (dz === 0) {\n        return shape;\n    }\n    console.log(`Lowest point at Z=${minZ}, lifting by ${dz}`);\n    const lifted = shape.onLeafs((leaf) => {\n        const moved = new Assembly(leaf); // keeps color, tags, bom, plane\n        moved.geometry = leaf.geometry.translate(0, 0, dz);\n        return moved;\n    });\n    if (!lifted) {\n        throw new Error(\"Input assembly contained no geometry\");\n    }\n    return lifted;\n}\n"
+            }
+          ],
+          "allConnectors": [
+            {
+              "ap2Name": "shape",
+              "ap1ID": "id-550",
+              "ap2ID": "id-551"
+            },
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-551",
+              "ap2ID": "id-549"
+            }
+          ],
+          "parentRepo": {
+            "privateRepo": false,
+            "repoName": "Above_XY",
+            "dateCreated": "2026-08-24T21:19:31Z",
+            "pngURL": "https://raw.githubusercontent.com/BarbourSmith/Above_XY/main/project.png",
+            "readMe": "https://raw.githubusercontent.com/BarbourSmith/Above_XY/master/README.md?sanitize=true",
+            "yyyy": 2026,
+            "topMoleculeID": "id-117",
+            "githubMoleculesUsed": [],
+            "html_url": "https://github.com/BarbourSmith/Above_XY",
+            "topics": [],
+            "userSetThumbnail": true,
+            "parentRepo": null,
+            "forks": 0,
+            "dateModified": "739852",
+            "ranking": 0,
+            "searchField": "above_xy barboursmith this atom takes the input geometry and moves it to be above the xy plane ",
+            "owner": "BarbourSmith",
+            "description": "This atom takes the input geometry and moves it to be above the XY plane",
+            "contentURL": "https://raw.githubusercontent.com/BarbourSmith/Above_XY/master/project.abundance?sanitize=true",
+            "svgURL": "https://raw.githubusercontent.com/BarbourSmith/Above_XY/master/project.svg?sanitize=true",
+            "isLocal": false
+          },
+          "unitsKey": "MM",
+          "fileTypeVersion": 1,
+          "lastReloadedFromGithubAt": 1787608211688
         }
       ],
       "allConnectors": [
@@ -1621,8 +1742,18 @@
           "ap2ID": "id-528"
         },
         {
-          "ap2Name": "number or geometry",
+          "ap2Name": "geometry",
           "ap1ID": "id-528",
+          "ap2ID": "id-532"
+        },
+        {
+          "ap2Name": "Input",
+          "ap1ID": "id-532",
+          "ap2ID": "id-552"
+        },
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-552",
           "ap2ID": "id-494"
         }
       ],
