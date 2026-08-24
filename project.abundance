@@ -673,8 +673,8 @@
     },
     {
       "atomType": "Molecule",
-      "x": 0.3101851851851852,
-      "y": 0.5041782729805014,
+      "x": 0.30158730158730157,
+      "y": 0.5236768802228412,
       "uniqueID": "id-327",
       "name": "Lid",
       "ioValues": [
@@ -1477,8 +1477,8 @@
     },
     {
       "atomType": "Move",
-      "x": 0.5224867724867724,
-      "y": 0.45403899721448465,
+      "x": 0.501984126984127,
+      "y": 0.46239554317548753,
       "uniqueID": "id-351",
       "ioValues": [
         {
@@ -1495,17 +1495,27 @@
         },
         {
           "name": "zDist",
-          "ioValue": 400,
-          "currentEquation": "400"
+          "ioValue": 439.2,
+          "currentEquation": "18*25.4"
         }
       ]
     },
     {
       "atomType": "Molecule",
-      "x": 0.3055555555555555,
-      "y": 0.7353760445682451,
+      "x": 0.30423280423280424,
+      "y": 0.7325905292479109,
       "uniqueID": "id-492",
       "name": "Box Front / Back",
+      "ioValues": [
+        {
+          "name": "Bench_Length",
+          "ioValue": 2133.6
+        },
+        {
+          "name": "Wood_Thickness",
+          "ioValue": 18
+        }
+      ],
       "topLevel": false,
       "allAtoms": [
         {
@@ -1519,9 +1529,103 @@
               "ioValue": "__GEOMETRY_INPUT__"
             }
           ]
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.15384615384615385,
+          "uniqueID": "id-513",
+          "name": "Bench_Length",
+          "type": "number"
+        },
+        {
+          "atomType": "Rectangle",
+          "x": 0.2969576719576719,
+          "y": 0.2813370473537604,
+          "uniqueID": "id-516",
+          "ioValues": [
+            {
+              "name": "x length",
+              "ioValue": 2133.6
+            },
+            {
+              "name": "y length",
+              "ioValue": 439.2,
+              "currentEquation": "18*25.4"
+            }
+          ]
+        },
+        {
+          "atomType": "Equation",
+          "x": 0.1832010582010582,
+          "y": 0.7298050139275767,
+          "uniqueID": "id-520",
+          "name": "18*25.4-T",
+          "ioValues": [
+            {
+              "name": "T",
+              "ioValue": 18
+            }
+          ],
+          "currentEquation": "18*25.4-T"
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.35097493036211697,
+          "uniqueID": "id-525",
+          "name": "Wood_Thickness",
+          "type": "number"
+        },
+        {
+          "atomType": "Extrude",
+          "x": 0.42658730158730157,
+          "y": 0.520891364902507,
+          "uniqueID": "id-528",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "height",
+              "ioValue": 18
+            }
+          ]
         }
       ],
-      "allConnectors": [],
+      "allConnectors": [
+        {
+          "ap2Name": "x length",
+          "ap1ID": "id-513",
+          "ap2ID": "id-516"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-516",
+          "ap2ID": "id-528"
+        },
+        {
+          "ap2Name": "y length",
+          "ap1ID": "id-520",
+          "ap2ID": "id-516"
+        },
+        {
+          "ap2Name": "T",
+          "ap1ID": "id-525",
+          "ap2ID": "id-520"
+        },
+        {
+          "ap2Name": "height",
+          "ap1ID": "id-525",
+          "ap2ID": "id-528"
+        },
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-528",
+          "ap2ID": "id-494"
+        }
+      ],
       "fileTypeVersion": 1
     },
     {
@@ -1595,6 +1699,20 @@
       ],
       "allConnectors": [],
       "fileTypeVersion": 1
+    },
+    {
+      "atomType": "Equation",
+      "x": 0.2374338624338624,
+      "y": 0.41225626740947074,
+      "uniqueID": "id-508",
+      "name": "18*25.4-T",
+      "ioValues": [
+        {
+          "name": "T",
+          "ioValue": 18
+        }
+      ],
+      "currentEquation": "18*25.4-T"
     }
   ],
   "allConnectors": [
@@ -1609,6 +1727,16 @@
       "ap2ID": "id-327"
     },
     {
+      "ap2Name": "T",
+      "ap1ID": "id-12",
+      "ap2ID": "id-508"
+    },
+    {
+      "ap2Name": "Wood_Thickness",
+      "ap1ID": "id-12",
+      "ap2ID": "id-492"
+    },
+    {
       "ap2Name": "Bench_Length",
       "ap1ID": "id-167",
       "ap2ID": "id-197"
@@ -1617,6 +1745,11 @@
       "ap2Name": "Bench_Length",
       "ap1ID": "id-167",
       "ap2ID": "id-327"
+    },
+    {
+      "ap2Name": "Bench_Length",
+      "ap1ID": "id-167",
+      "ap2ID": "id-492"
     },
     {
       "ap2Name": "Shape 1",
@@ -1637,6 +1770,11 @@
       "ap2Name": "Shape 2",
       "ap1ID": "id-351",
       "ap2ID": "id-323"
+    },
+    {
+      "ap2Name": "zDist",
+      "ap1ID": "id-508",
+      "ap2ID": "id-351"
     }
   ],
   "unitsKey": "MM",
