@@ -7,6 +7,7 @@
 ## Inputs
 
 - **Wood_Thickness** (number)
+- **Bench_Length** (number)
 
 
 
