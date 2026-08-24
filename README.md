@@ -14,5 +14,7 @@
 
  Todo: Give lid some angle, measure and model batteries, add cutouts for control modules. Add a 4 degree slope to the lid
 
+__GEOMETRY_INPUT__
+
 
 
