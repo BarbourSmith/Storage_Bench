@@ -7,8 +7,7 @@
   "ioValues": [
     {
       "name": "Wood_Thickness",
-      "ioValue": 18,
-      "currentEquation": "18"
+      "ioValue": 18
     }
   ],
   "topLevel": true,
@@ -26,9 +25,16 @@
       ]
     },
     {
+      "atomType": "Input",
+      "x": 0.025384615384615384,
+      "y": 0.15384615384615385,
+      "uniqueID": "id-12",
+      "name": "Wood_Thickness"
+    },
+    {
       "atomType": "Molecule",
-      "x": 0.39814814814814814,
-      "y": 0.6824512534818942,
+      "x": 0.4087301587301588,
+      "y": 0.2256267409470752,
       "uniqueID": "id-4",
       "name": "Side",
       "ioValues": [
@@ -85,8 +91,7 @@
           "ioValues": [
             {
               "name": "x length",
-              "ioValue": 60,
-              "currentEquation": "60"
+              "ioValue": 60
             },
             {
               "name": "y length",
@@ -155,8 +160,7 @@
             },
             {
               "name": "z-axis degrees",
-              "ioValue": -10,
-              "currentEquation": "-10"
+              "ioValue": -10
             }
           ]
         },
@@ -264,23 +268,47 @@
       "fileTypeVersion": 1
     },
     {
-      "atomType": "Input",
-      "x": 0.025384615384615384,
-      "y": 0.49303621169916434,
-      "uniqueID": "id-12",
-      "name": "Wood_Thickness"
+      "atomType": "Rotate",
+      "x": 0.3253968253968254,
+      "y": 0.5181058495821727,
+      "uniqueID": "id-77",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "x-axis degrees",
+          "ioValue": 90,
+          "currentEquation": "90"
+        },
+        {
+          "name": "y-axis degrees",
+          "ioValue": 0
+        },
+        {
+          "name": "z-axis degrees",
+          "ioValue": 90,
+          "currentEquation": "90"
+        }
+      ]
     }
   ],
   "allConnectors": [
+    {
+      "ap2Name": "Wood_Thickness",
+      "ap1ID": "id-12",
+      "ap2ID": "id-4"
+    },
     {
       "ap2Name": "number or geometry",
       "ap1ID": "id-4",
       "ap2ID": "id-2"
     },
     {
-      "ap2Name": "Wood_Thickness",
-      "ap1ID": "id-12",
-      "ap2ID": "id-4"
+      "ap2Name": "geometry",
+      "ap1ID": "id-4",
+      "ap2ID": "id-77"
     }
   ],
   "unitsKey": "MM",
