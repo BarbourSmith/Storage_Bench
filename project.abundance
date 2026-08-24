@@ -39,9 +39,136 @@
     {
       "atomType": "Input",
       "x": 0.025384615384615384,
-      "y": 0.6657381615598886,
+      "y": 0.24615384615384617,
       "uniqueID": "id-167",
       "name": "Bench_Length"
+    },
+    {
+      "atomType": "Assembly",
+      "x": 0.6984126984126984,
+      "y": 0.2813370473537604,
+      "uniqueID": "id-323",
+      "ioValues": [
+        {
+          "name": "Shape 1",
+          "ioValue": null
+        },
+        {
+          "name": "Shape 2",
+          "ioValue": null
+        }
+      ]
+    },
+    {
+      "atomType": "Move",
+      "x": 0.501984126984127,
+      "y": 0.46239554317548753,
+      "uniqueID": "id-351",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "xDist",
+          "ioValue": 0
+        },
+        {
+          "name": "yDist",
+          "ioValue": 0
+        },
+        {
+          "name": "zDist",
+          "ioValue": 439.2,
+          "currentEquation": "18*25.4"
+        }
+      ]
+    },
+    {
+      "atomType": "Equation",
+      "x": 0.2374338624338624,
+      "y": 0.41225626740947074,
+      "uniqueID": "id-508",
+      "name": "18*25.4-T",
+      "ioValues": [
+        {
+          "name": "T",
+          "ioValue": 18
+        }
+      ],
+      "currentEquation": "18*25.4-T"
+    },
+    {
+      "atomType": "Molecule",
+      "x": 0.3048941798941799,
+      "y": 0.9080779944289693,
+      "uniqueID": "id-496",
+      "name": "Box Base",
+      "topLevel": false,
+      "allAtoms": [
+        {
+          "atomType": "Output",
+          "x": 0.98,
+          "y": 0.5,
+          "uniqueID": "id-498",
+          "ioValues": [
+            {
+              "name": "number or geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        }
+      ],
+      "allConnectors": [],
+      "fileTypeVersion": 1
+    },
+    {
+      "atomType": "Molecule",
+      "x": 0.4503968253968254,
+      "y": 0.8969359331476323,
+      "uniqueID": "id-500",
+      "name": "Dividers",
+      "topLevel": false,
+      "allAtoms": [
+        {
+          "atomType": "Output",
+          "x": 0.98,
+          "y": 0.5,
+          "uniqueID": "id-502",
+          "ioValues": [
+            {
+              "name": "number or geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        }
+      ],
+      "allConnectors": [],
+      "fileTypeVersion": 1
+    },
+    {
+      "atomType": "Molecule",
+      "x": 0.542989417989418,
+      "y": 0.8105849582172702,
+      "uniqueID": "id-504",
+      "name": "Backrest",
+      "topLevel": false,
+      "allAtoms": [
+        {
+          "atomType": "Output",
+          "x": 0.98,
+          "y": 0.5,
+          "uniqueID": "id-506",
+          "ioValues": [
+            {
+              "name": "number or geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        }
+      ],
+      "allConnectors": [],
+      "fileTypeVersion": 1
     },
     {
       "atomType": "Molecule",
@@ -188,6 +315,60 @@
               "ioValue": null
             }
           ]
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.15384615384615385,
+          "uniqueID": "id-317",
+          "name": "Wood_Thickness",
+          "type": "number"
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.24615384615384617,
+          "uniqueID": "id-320",
+          "name": "Bench_Length",
+          "type": "number"
+        },
+        {
+          "atomType": "Move",
+          "x": 0.5727513227513228,
+          "y": 0.43732590529247906,
+          "uniqueID": "id-480",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "xDist",
+              "ioValue": -9
+            },
+            {
+              "name": "yDist",
+              "ioValue": 0
+            },
+            {
+              "name": "zDist",
+              "ioValue": 0
+            }
+          ]
+        },
+        {
+          "atomType": "Equation",
+          "x": 0.26256613756613756,
+          "y": 0.42061281337047357,
+          "uniqueID": "id-486",
+          "name": "T/-2",
+          "ioValues": [
+            {
+              "name": "T",
+              "ioValue": 18
+            }
+          ],
+          "currentEquation": "T/-2"
         },
         {
           "atomType": "Molecule",
@@ -520,60 +701,6 @@
           "unitsKey": "MM",
           "fileTypeVersion": 1,
           "lastReloadedFromGithubAt": 1787606695014
-        },
-        {
-          "atomType": "Input",
-          "x": 0.025384615384615384,
-          "y": 0.15384615384615385,
-          "uniqueID": "id-317",
-          "name": "Wood_Thickness",
-          "type": "number"
-        },
-        {
-          "atomType": "Input",
-          "x": 0.025384615384615384,
-          "y": 0.44011142061281333,
-          "uniqueID": "id-320",
-          "name": "Bench_Length",
-          "type": "number"
-        },
-        {
-          "atomType": "Move",
-          "x": 0.5727513227513228,
-          "y": 0.43732590529247906,
-          "uniqueID": "id-480",
-          "ioValues": [
-            {
-              "name": "geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "xDist",
-              "ioValue": -9
-            },
-            {
-              "name": "yDist",
-              "ioValue": 0
-            },
-            {
-              "name": "zDist",
-              "ioValue": 0
-            }
-          ]
-        },
-        {
-          "atomType": "Equation",
-          "x": 0.26256613756613756,
-          "y": 0.42061281337047357,
-          "uniqueID": "id-486",
-          "name": "T/-2",
-          "ioValues": [
-            {
-              "name": "T",
-              "ioValue": 18
-            }
-          ],
-          "currentEquation": "T/-2"
         }
       ],
       "allConnectors": [
@@ -613,16 +740,6 @@
           "ap2ID": "id-199"
         },
         {
-          "ap2Name": "geometry",
-          "ap1ID": "id-202",
-          "ap2ID": "id-201"
-        },
-        {
-          "ap2Name": "geometry",
-          "ap1ID": "id-211",
-          "ap2ID": "id-480"
-        },
-        {
           "ap2Name": "Wood_Thickness",
           "ap1ID": "id-317",
           "ap2ID": "id-202"
@@ -651,25 +768,19 @@
           "ap2Name": "xDist",
           "ap1ID": "id-486",
           "ap2ID": "id-480"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-202",
+          "ap2ID": "id-201"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-211",
+          "ap2ID": "id-480"
         }
       ],
       "fileTypeVersion": 1
-    },
-    {
-      "atomType": "Assembly",
-      "x": 0.6984126984126984,
-      "y": 0.2813370473537604,
-      "uniqueID": "id-323",
-      "ioValues": [
-        {
-          "name": "Shape 1",
-          "ioValue": null
-        },
-        {
-          "name": "Shape 2",
-          "ioValue": null
-        }
-      ]
     },
     {
       "atomType": "Molecule",
@@ -704,7 +815,7 @@
         {
           "atomType": "Input",
           "x": 0.025384615384615384,
-          "y": 0.2395543175487465,
+          "y": 0.15384615384615385,
           "uniqueID": "id-331",
           "name": "Wood_Thickness",
           "type": "number"
@@ -712,7 +823,7 @@
         {
           "atomType": "Input",
           "x": 0.025384615384615384,
-          "y": 0.5153203342618384,
+          "y": 0.24615384615384617,
           "uniqueID": "id-334",
           "name": "Bench_Length",
           "type": "number"
@@ -780,8 +891,7 @@
             },
             {
               "name": "y length",
-              "ioValue": 30,
-              "currentEquation": "30"
+              "ioValue": 30
             }
           ]
         },
@@ -899,8 +1009,7 @@
           "ioValues": [
             {
               "name": "diameter",
-              "ioValue": 35,
-              "currentEquation": "35"
+              "ioValue": 35
             }
           ]
         },
@@ -916,8 +1025,7 @@
             },
             {
               "name": "height",
-              "ioValue": 45,
-              "currentEquation": "45"
+              "ioValue": 45
             }
           ]
         },
@@ -937,8 +1045,7 @@
             },
             {
               "name": "y-axis degrees",
-              "ioValue": 90,
-              "currentEquation": "90"
+              "ioValue": 90
             },
             {
               "name": "z-axis degrees",
@@ -971,8 +1078,7 @@
             },
             {
               "name": "xDist",
-              "ioValue": 1057.8,
-              "currentEquation": "200"
+              "ioValue": 1057.8
             },
             {
               "name": "yDist",
@@ -1032,6 +1138,19 @@
             }
           ],
           "currentEquation": "T/2"
+        },
+        {
+          "atomType": "Color",
+          "x": 0.8802910052910053,
+          "y": 0.7994428969359332,
+          "uniqueID": "id-476",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ],
+          "selectedColor": "Keep Out"
         },
         {
           "atomType": "GitHubMolecule",
@@ -1331,19 +1450,6 @@
           "unitsKey": "Unitless",
           "fileTypeVersion": 1,
           "lastReloadedFromGithubAt": 1787607541460
-        },
-        {
-          "atomType": "Color",
-          "x": 0.8802910052910053,
-          "y": 0.7994428969359332,
-          "uniqueID": "id-476",
-          "ioValues": [
-            {
-              "name": "geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            }
-          ],
-          "selectedColor": "Keep Out"
         }
       ],
       "allConnectors": [
@@ -1463,42 +1569,17 @@
           "ap2ID": "id-398"
         },
         {
-          "ap2Name": "geometry",
-          "ap1ID": "id-436",
-          "ap2ID": "id-476"
-        },
-        {
           "ap2Name": "Shape 2",
           "ap1ID": "id-476",
           "ap2ID": "id-409"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-436",
+          "ap2ID": "id-476"
         }
       ],
       "fileTypeVersion": 1
-    },
-    {
-      "atomType": "Move",
-      "x": 0.501984126984127,
-      "y": 0.46239554317548753,
-      "uniqueID": "id-351",
-      "ioValues": [
-        {
-          "name": "geometry",
-          "ioValue": "__GEOMETRY_INPUT__"
-        },
-        {
-          "name": "xDist",
-          "ioValue": 0
-        },
-        {
-          "name": "yDist",
-          "ioValue": 0
-        },
-        {
-          "name": "zDist",
-          "ioValue": 439.2,
-          "currentEquation": "18*25.4"
-        }
-      ]
     },
     {
       "atomType": "Molecule",
@@ -1572,7 +1653,7 @@
         {
           "atomType": "Input",
           "x": 0.025384615384615384,
-          "y": 0.35097493036211697,
+          "y": 0.24615384615384617,
           "uniqueID": "id-525",
           "name": "Wood_Thickness",
           "type": "number"
@@ -1605,8 +1686,7 @@
             },
             {
               "name": "x-axis degrees",
-              "ioValue": 90,
-              "currentEquation": "90"
+              "ioValue": 90
             },
             {
               "name": "y-axis degrees",
@@ -1758,92 +1838,6 @@
         }
       ],
       "fileTypeVersion": 1
-    },
-    {
-      "atomType": "Molecule",
-      "x": 0.3048941798941799,
-      "y": 0.9080779944289693,
-      "uniqueID": "id-496",
-      "name": "Box Base",
-      "topLevel": false,
-      "allAtoms": [
-        {
-          "atomType": "Output",
-          "x": 0.98,
-          "y": 0.5,
-          "uniqueID": "id-498",
-          "ioValues": [
-            {
-              "name": "number or geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            }
-          ]
-        }
-      ],
-      "allConnectors": [],
-      "fileTypeVersion": 1
-    },
-    {
-      "atomType": "Molecule",
-      "x": 0.4503968253968254,
-      "y": 0.8969359331476323,
-      "uniqueID": "id-500",
-      "name": "Dividers",
-      "topLevel": false,
-      "allAtoms": [
-        {
-          "atomType": "Output",
-          "x": 0.98,
-          "y": 0.5,
-          "uniqueID": "id-502",
-          "ioValues": [
-            {
-              "name": "number or geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            }
-          ]
-        }
-      ],
-      "allConnectors": [],
-      "fileTypeVersion": 1
-    },
-    {
-      "atomType": "Molecule",
-      "x": 0.542989417989418,
-      "y": 0.8105849582172702,
-      "uniqueID": "id-504",
-      "name": "Backrest",
-      "topLevel": false,
-      "allAtoms": [
-        {
-          "atomType": "Output",
-          "x": 0.98,
-          "y": 0.5,
-          "uniqueID": "id-506",
-          "ioValues": [
-            {
-              "name": "number or geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            }
-          ]
-        }
-      ],
-      "allConnectors": [],
-      "fileTypeVersion": 1
-    },
-    {
-      "atomType": "Equation",
-      "x": 0.2374338624338624,
-      "y": 0.41225626740947074,
-      "uniqueID": "id-508",
-      "name": "18*25.4-T",
-      "ioValues": [
-        {
-          "name": "T",
-          "ioValue": 18
-        }
-      ],
-      "currentEquation": "18*25.4-T"
     }
   ],
   "allConnectors": [
@@ -1883,19 +1877,9 @@
       "ap2ID": "id-492"
     },
     {
-      "ap2Name": "Shape 1",
-      "ap1ID": "id-197",
-      "ap2ID": "id-323"
-    },
-    {
       "ap2Name": "number or geometry",
       "ap1ID": "id-323",
       "ap2ID": "id-2"
-    },
-    {
-      "ap2Name": "geometry",
-      "ap1ID": "id-327",
-      "ap2ID": "id-351"
     },
     {
       "ap2Name": "Shape 2",
@@ -1905,6 +1889,16 @@
     {
       "ap2Name": "zDist",
       "ap1ID": "id-508",
+      "ap2ID": "id-351"
+    },
+    {
+      "ap2Name": "Shape 1",
+      "ap1ID": "id-197",
+      "ap2ID": "id-323"
+    },
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-327",
       "ap2ID": "id-351"
     }
   ],
